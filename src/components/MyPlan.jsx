@@ -72,14 +72,14 @@ const MyPlan = () => {
                 </div>
 
                 {/* Sort By Select Dropdown */}
-                <div className='ms-auto flex gap-2  justify-items-center'>
+                <div className='ms-auto flex gap-2  items-center'>
 
-                    <p>Sort by</p>
+                    <p className='text-gray-400'>Sort by</p>
                     <div>
                         <select defaultValue="Pick a color" className="select">
+                            <option>Difficulty</option>
                             <option>Duration</option>
                             <option>Rating</option>
-                            <option>Velvet</option>
                         </select>
                     </div>
                 </div>
