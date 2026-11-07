@@ -2,6 +2,7 @@
 import React from 'react';
 import NavLinks from './NavLinks';
 import Link from 'next/link';
+import NavbarButtons from './NavbarButtons';
 
 const Navbar = () => {
     const navLinks = (
@@ -48,25 +49,9 @@ const Navbar = () => {
 
 
                 <div className="navbar-end gap-2 z-10 relative">
-                    <Link
-                        href="/myplan"
-                        className="p-3 inline-flex items-center text-sm font-semibold hover:text-[#C2F800] transition-colors cursor-pointer"
-                    >
-                        Plan
-                        <span className='text-black font-black px-2.5 py-0.5 m-1 rounded-full bg-[#C2F800] text-xs'>
-                            0
-                        </span>
-                    </Link>
+                    
+                    <NavbarButtons></NavbarButtons>
 
-                    <Link
-                        href="/myplan"
-                        className="p-3 inline-flex items-center text-sm font-semibold hover:text-[#C2F800] transition-colors cursor-pointer"
-                    >
-                        Saved
-                        <span className='font-bold px-2.5 py-0.5 m-1 rounded-full border border-gray-500 text-xs text-zinc-400 '>
-                            0
-                        </span>
-                    </Link>
                 </div>
             </div>
         </nav>
