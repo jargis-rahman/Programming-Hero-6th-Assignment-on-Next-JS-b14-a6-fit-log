@@ -3,6 +3,11 @@ import { useWorkContext } from '@/context/WorkContext';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { LuClock } from 'react-icons/lu';
+import { FaFire } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
+import { FaCheck } from 'react-icons/fa6';
+import { RxCross2 } from 'react-icons/rx';
 
 const MyPlan = () => {
     const { planlist, setPlanlist, savedlist, setSavedlist } = useWorkContext();
@@ -66,9 +71,10 @@ const MyPlan = () => {
                         key={item.id}
                         className="w-full bg-[#13151A] rounded-2xl p-3 sm:p-4 border border-zinc-900/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-all duration-200 hover:border-zinc-800"
                     >
-                        {/* বাম পাশ: ইমেজ, টাইটেল ও ডিসক্রিপশন */}
+                        {/* Image & Description*/}
                         <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto">
-                            {/* ওয়ার্কআউট ইমেজ */}
+
+                            {/* Image*/}
                             <div className="relative w-20 h-14 sm:w-28 sm:h-20 rounded-xl overflow-hidden flex-shrink-0 bg-zinc-900">
                                 <img
                                     src={item.image}
@@ -77,7 +83,7 @@ const MyPlan = () => {
                                 />
                             </div>
 
-                            {/* টেক্সট ডিটেইলস */}
+                            {/* Description */}
                             <div className="flex flex-col gap-1 w-full min-w-0">
                                 <h3 className="text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight text-white truncate">
                                     {item.name}
@@ -86,25 +92,25 @@ const MyPlan = () => {
                                     {item.equipment || "Bodyweight"}
                                 </p>
 
-                                {/* আইকন */}
+                                {/* Icons*/}
                                 <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] font-semibold text-zinc-400 mt-0.5">
                                     <span className="flex items-center gap-1">
-                                        <span className="text-zinc-500 text-xs">🕒</span> {item.duration} min
+                                        <LuClock className="text-[#CCFF00] text-xs sm:text-sm" /> {item.duration} min
                                     </span>
                                     <span className="flex items-center gap-1">
-                                        <span className="text-[#CCFF00] text-xs">🔥</span> {item.caloriesBurned} kcal
+                                        <FaFire className="text-[#CCFF00] text-xs sm:text-sm" /> {item.caloriesBurned} kcal
                                     </span>
                                     <span className="flex items-center gap-1">
-                                        <span className="text-yellow-500 text-xs">⭐</span> {item.rating}
+                                        <AiFillStar className="text-[#CCFF00] text-xs sm:text-sm" /> {item.rating}
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        {/* ডান পাশ: অ্যাকশন কন্ট্রোল বাটন সমূহ */}
+                        {/* Right Side Button*/}
                         <div className="flex items-center flex-wrap sm:flex-nowrap gap-2.5 sm:gap-3 w-full md:w-auto justify-between sm:justify-end pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800/40">
 
-                            {/* View Details বাটন */}
+                            {/* View Details Button */}
                             <Link
                                 href={`/workouts/${item.id}`}
                                 className="px-3.5 sm:px-4 py-2 border border-zinc-800 rounded-full text-[11px] sm:text-xs font-bold text-zinc-300 hover:text-white hover:bg-zinc-900 transition-all cursor-pointer whitespace-nowrap"
@@ -112,7 +118,7 @@ const MyPlan = () => {
                                 View Details
                             </Link>
 
-                            {/* Mark as Done বাটন */}
+                            {/* Mark as Done button */}
                             <button
                                 onClick={() => handleMarkDone(item.id)}
                                 disabled={orderedId.includes(item.id)}
@@ -121,16 +127,16 @@ const MyPlan = () => {
                                     : 'bg-[#CCFF00] text-black hover:bg-[#b2df00] cursor-pointer'
                                     }`}
                             >
-                                <span>✓</span> {orderedId.includes(item.id) ? "Completed" : "Mark as Done"}
+                                <FaCheck className="text-xs" /> {orderedId.includes(item.id) ? "Completed" : "Mark as Done"}
                             </button>
 
-                            {/* রিমুভ ক্রস বাটন (×) */}
+                            {/* Remove Button */}
                             <button
                                 onClick={() => handleRemove(item.id)}
-                                className="text-zinc-600 hover:text-red-500 font-light text-xl sm:text-2xl px-1 transition-colors cursor-pointer ml-auto sm:ml-0"
+                                className="text-zinc-600 hover:text-red-500 text-lg sm:text-xl p-1 transition-colors cursor-pointer ml-auto sm:ml-0 flex items-center justify-center"
                                 title="Remove"
                             >
-                                ×
+                                <RxCross2 />
                             </button>
                         </div>
                     </div>
@@ -185,16 +191,16 @@ const MyPlan = () => {
                     <div className="flex items-center gap-2 bg-[#13151A] p-1 rounded-xl border border-zinc-800">
                         <button
                             onClick={() => setActiveTab("plan")}
-                            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeTab === "plan"
+                            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer ${activeTab === "plan"
                                 ? "bg-[#CCFF00] text-black shadow-md"
                                 : "text-zinc-400 hover:text-white"
                                 }`}
                         >
-                            Today's Plan
+                            Today&apos;s Plan
                         </button>
                         <button
                             onClick={() => setActiveTab("saved")}
-                            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeTab === "saved"
+                            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer ${activeTab === "saved"
                                 ? "bg-[#CCFF00] text-black shadow-md"
                                 : "text-zinc-400 hover:text-white"
                                 }`}
@@ -209,7 +215,7 @@ const MyPlan = () => {
                         <select
                             onChange={(e) => setSortBy(e.target.value)}
                             defaultValue="duration"
-                            className="bg-[#13151A] text-white border border-zinc-800 rounded-lg px-3 py-2 text-xs sm:text-sm outline-none cursor-pointer"
+                            className="bg-[#13151A] text-gray-200 border border-zinc-800 rounded-lg px-3 py-2 text-xs sm:text-sm outline-none cursor-pointer"
                         >
                             <option value="duration">Duration</option>
                             <option value="calories">Calories</option>

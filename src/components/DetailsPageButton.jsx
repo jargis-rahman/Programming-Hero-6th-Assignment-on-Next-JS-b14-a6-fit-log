@@ -40,7 +40,7 @@ const DetailsPageButton = ({ workdetails }) => {
                 onClick={handleAddToPlan}
 
                 className="
-                flex items-center gap-2 bg-[#CCFF00] text-black font-extrabold text-sm uppercase px-5 py-3 rounded-xl transition-all hover:bg-[#b2df00] cursor-pointer ">
+                flex items-center gap-2 bg-[#CCFF00] text-black font-semibold text-sm px-5 py-3 rounded-xl transition-all hover:bg-[#b2df00] cursor-pointer ">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
@@ -49,7 +49,7 @@ const DetailsPageButton = ({ workdetails }) => {
             <button
                 onClick={handleAddToSave}
 
-                className="flex items-center gap-2 bg-transparent text-white border border-zinc-700 font-extrabold text-sm uppercase px-5 py-3 rounded-xl transition-all hover:bg-zinc-800/50 cursor-pointer">
+                className="flex items-center gap-2 bg-transparent text-white border border-zinc-700 font-semibold text-sm px-5 py-3 rounded-xl transition-all hover:bg-zinc-800/50 cursor-pointer">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>

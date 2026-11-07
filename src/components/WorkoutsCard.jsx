@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-
+import { LuClock } from 'react-icons/lu';
+import { FaFire } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
 
 const WorkoutsCard = ({ work }) => {
 
@@ -47,23 +49,19 @@ const WorkoutsCard = ({ work }) => {
 
 
                 <div className="flex justify-between items-center text-zinc-400 text-sm font-medium px-1">
-
-
-                    <div className="flex items-center gap-1.5">
-                        <span className="text-zinc-500 text-base">🕒</span>
-                        <span>{duration} min</span>
-                    </div>
-
-
-                    <div className="flex items-center gap-1.5">
-                        <span className="text-zinc-500 text-base">🔥</span>
-                        <span>{caloriesBurned} kcal</span>
-                    </div>
-
-
-                    <div className="flex items-center gap-1.5">
-                        <span className="text-yellow-500 text-base">⭐</span>
-                        <span>{rating}</span>
+                   
+                    {/* Icons */}
+                    
+                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] font-semibold text-zinc-400 mt-0.5">
+                        <span className="flex items-center gap-1">
+                            <LuClock className="text-[#CCFF00] text-xs sm:text-sm" /> {duration} min
+                        </span>
+                        <span className="flex items-center gap-1">
+                            <FaFire className="text-[#CCFF00] text-xs sm:text-sm" /> {caloriesBurned} kcal
+                        </span>
+                        <span className="flex items-center gap-1">
+                            <AiFillStar className="text-[#CCFF00] text-xs sm:text-sm" /> {rating}
+                        </span>
                     </div>
                 </div>
 

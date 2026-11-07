@@ -17,7 +17,7 @@ const NavbarButtons = () => {
             </Link>
 
             <Link
-                href="/myplan?tab=saved"
+                href="/myplan"
                 className="p-3 inline-flex items-center text-sm font-semibold hover:text-[#C2F800] transition-colors cursor-pointer"
             >
                 Saved
