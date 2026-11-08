@@ -13,10 +13,10 @@ const Footer = () => {
 
                 {/* Copyright */}
                 <nav className="text-center sm:text-right">
-                    <a href="">
+                    <a href=''>
                         <p className="text-xs sm:text-sm text-neutral-content/80">
-                        Copyright © {new Date().getFullYear()} - All right reserved
-                    </p>
+                            Copyright © {new Date().getFullYear()} - All right reserved
+                        </p>
                     </a>
                 </nav>
 
