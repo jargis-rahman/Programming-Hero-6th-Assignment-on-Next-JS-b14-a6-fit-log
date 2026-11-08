@@ -6,10 +6,10 @@ FitLog is a modern, dark-themed fitness and workout companion web application bu
 
 - **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Components:** [DaisyUI](https://daisyui.com/)
 - **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
-- **Components:** [Daisy UI] (https://daisyui.com/components/)
-- **Notifications:** React Hot Toast
-- **Deployment:** Vercel
+- **Notifications:** [React Hot Toast](https://react-hot-toast.com/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## Key Features
 
