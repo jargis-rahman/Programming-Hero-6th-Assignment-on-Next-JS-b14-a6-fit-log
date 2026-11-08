@@ -20,4 +20,16 @@ FitLog is a modern, dark-themed fitness and workout companion web application bu
 5. **Responsive & Smooth:** Works seamlessly across mobile, tablet, and desktop with smooth navigation.
 
 
+## Getting Started
 
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have Node.js installed on your system.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/jargis-rahman/Programming-Hero-6th-Assignment-on-Next-JS-b14-a6-fit-log.git](https://github.com/jargis-rahman/Programming-Hero-6th-Assignment-on-Next-JS-b14-a6-fit-log.git)
