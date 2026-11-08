@@ -108,6 +108,7 @@ const MyPlan = () => {
                         </div>
 
                         {/* Right Side Button*/}
+
                         <div className="flex items-center flex-wrap sm:flex-nowrap gap-2.5 sm:gap-3 w-full md:w-auto justify-between sm:justify-end pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800/40">
 
                             {/* View Details Button */}
@@ -118,22 +119,32 @@ const MyPlan = () => {
                                 View Details
                             </Link>
 
-                            {/* Mark as Done button */}
-                            <button
-                                onClick={() => handleMarkDone(item.id)}
-                                disabled={orderedId.includes(item.id)}
-                                className={`flex items-center gap-1.5 font-bold text-[11px] sm:text-xs px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full transition-all shadow-md whitespace-nowrap ${orderedId.includes(item.id)
-                                    ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed shadow-none'
-                                    : 'bg-[#CCFF00] text-black hover:bg-[#b2df00] cursor-pointer'
-                                    }`}
-                            >
-                                <FaCheck className="text-xs" /> {orderedId.includes(item.id) ? "Completed" : "Mark as Done"}
-                            </button>
+                            {/* Mark as Done Button */}
+                            {activeTab === "plan" && (
+                                <button
+                                    onClick={() => handleMarkDone(item.id)}
+                                    disabled={orderedId.includes(item.id)}
+                                    className={`
+                                        flex items-center gap-1.5 font-bold text-[11px] 
+                                        sm:text-xs px-3.5 sm:px-4 py-2 
+                                        sm:py-2.5 rounded-full transition-all shadow-md whitespace-nowrap 
+                                        ${orderedId.includes(item.id)
+                                            ? 'bg-zinc-800 text-gray-500 cursor-not-allowed shadow-none'
+                                            : 'bg-[#CCFF00] text-black hover:bg-[#b2df00] cursor-pointer'
+                                        }`}
+                                >
+                                    <FaCheck className="text-xs" /> 
+                                    {orderedId.includes(item.id) ? "Completed" : "Mark as Done"}
+                                </button>
+                            )}
 
                             {/* Remove Button */}
                             <button
                                 onClick={() => handleRemove(item.id)}
-                                className="text-zinc-600 hover:text-red-500 text-lg sm:text-xl p-1 transition-colors cursor-pointer ml-auto sm:ml-0 flex items-center justify-center"
+                                className="text-gray-600 
+                                hover:text-red-500 text-lg 
+                                sm:text-xl p-1 transition-colors cursor-pointer ml-auto 
+                                sm:ml-0 flex items-center justify-center"
                                 title="Remove"
                             >
                                 <RxCross2 />
@@ -196,7 +207,7 @@ const MyPlan = () => {
                                 : "text-zinc-400 hover:text-white"
                                 }`}
                         >
-                            Today&apos;s Plan
+                            Today's Plan
                         </button>
                         <button
                             onClick={() => setActiveTab("saved")}

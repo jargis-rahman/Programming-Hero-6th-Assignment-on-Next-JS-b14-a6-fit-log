@@ -119,7 +119,7 @@ const WorkoutDetailsPage = async ({ params }) => {
                     </div>
 
 
-                    {/* Action Button */}
+                    {/* Button */}
 
                     <DetailsPageButton workdetails={workdetails}></DetailsPageButton>
 

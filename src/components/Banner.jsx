@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Banner = () => {
@@ -20,7 +21,9 @@ const Banner = () => {
                             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
                             into today's plan, and watch the week's work add up.
                         </p>
-                        <button className="btn bg-[#C2F800] text-black font-bold">BROWSE WORKOUTS</button>
+                        <a href="#workouts-section">
+                            <button className="btn bg-[#C2F800] text-black font-bold">BROWSE WORKOUTS</button>
+                        </a>
                     </div>
                 </div>
             </div>
